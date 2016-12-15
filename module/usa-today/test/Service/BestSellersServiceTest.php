@@ -1,12 +1,9 @@
 <?php
-namespace USAToday\Test\Service;
-
-use AcctByte\Service\Manager;
-
+namespace USATodayTest\Service;
 
 
 /**
- * \USAToday\Service\USAToday test case.
+ * \USAToday\Service\BestSellersService test case.
  */
 class BestSellersServiceTest extends \PHPUnit_Framework_TestCase
 {
@@ -24,13 +21,7 @@ class BestSellersServiceTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-
-        $logger = new \Zend\Log\Logger();
-        $manager = new Manager($logger);
-        $developerKey = '';
-        $manager->setDeveloperKey($developerKey);
-
-        $this->service = new \USAToday\Service\BestSellersService($manager);
+        $this->service = new \USAToday\Service\BestSellersService();
     }
 
 
