@@ -58,4 +58,4 @@ php public/index.php usatoday fetch-categories -v
 
 ## Links
 
-* [ZF2 website](http://framework.zend.com)
+* [Zend Framework website](http://framework.zend.com)
