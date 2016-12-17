@@ -2,12 +2,12 @@
 return array(
     'controllers' => array(
         'factories' => [
-            'USAToday\Controller\Console' => 'USAToday\Controller\Factory\ConsoleControllerFactory',
+            'Firelike\USAToday\Controller\Console' => Firelike\USAToday\Controller\Factory\ConsoleControllerFactory::class,
         ]
     ),
     'service_manager' => array(
         'factories' => array(
-            USAToday\Service\BestSellersService::class => USAToday\Service\Factory\BestSellersServiceFactory::class
+            Firelike\USAToday\Service\BestSellersService::class => Firelike\USAToday\Service\Factory\BestSellersServiceFactory::class
         )
     ),
     'console' => array(
@@ -17,7 +17,7 @@ return array(
                     'options' => array(
                         'route' => 'usatoday fetch-booklists [--limit=] [--verbose|-v]',
                         'defaults' => array(
-                            'controller' => 'USAToday\Controller\Console',
+                            'controller' => 'Firelike\USAToday\Controller\Console',
                             'action' => 'fetch-booklists'
                         )
                     )
@@ -26,7 +26,7 @@ return array(
                     'options' => array(
                         'route' => 'usatoday fetch-dates [--limit=] [--verbose|-v]',
                         'defaults' => array(
-                            'controller' => 'USAToday\Controller\Console',
+                            'controller' => 'Firelike\USAToday\Controller\Console',
                             'action' => 'fetch-dates'
                         )
                     )
@@ -35,7 +35,7 @@ return array(
                     'options' => array(
                         'route' => 'usatoday fetch-categories [--limit=] [--verbose|-v]',
                         'defaults' => array(
-                            'controller' => 'USAToday\Controller\Console',
+                            'controller' => 'Firelike\USAToday\Controller\Console',
                             'action' => 'fetch-categories'
                         )
                     )

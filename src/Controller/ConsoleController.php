@@ -1,5 +1,5 @@
 <?php
-namespace USAToday\Controller;
+namespace Firelike\USAToday\Controller;
 
 use Zend\Mvc\Console\Controller\AbstractConsoleController;
 
@@ -7,7 +7,7 @@ use Zend\Mvc\Console\Controller\AbstractConsoleController;
 class ConsoleController extends AbstractConsoleController
 {
     /**
-     * @var \USAToday\Service\BestSellersService
+     * @var \Firelike\USAToday\Service\BestSellersService
      */
     protected $service;
 
@@ -31,11 +31,8 @@ class ConsoleController extends AbstractConsoleController
             'start' => 0,
             'limit' => $limit
         );
-        $booklists= $this->getService()->booklists($options);
-
-        foreach ($booklists as $booklist) {
-            \Zend\Debug\Debug::dump($booklist);
-        }
+        $records = $this->getService()->booklists($options);
+        var_dump($records);
 
         if ($verbose) {
             $this->getConsole()->writeLine("Done");
@@ -60,10 +57,8 @@ class ConsoleController extends AbstractConsoleController
             $this->getConsole()->writeLine(sprintf("Limit selected: %s", $limit));
         }
 
-        $dates = $this->getService()->dates();
-        foreach ($dates as $date) {
-            var_dump($date);
-        }
+        $records = $this->getService()->dates();
+        var_dump($records);
 
         if ($verbose) {
             $this->getConsole()->writeLine("Done");
@@ -92,11 +87,8 @@ class ConsoleController extends AbstractConsoleController
             'start' => 0,
             'limit' => $limit
         );
-        $categories = $this->getService()->categories($options);
-
-        foreach ($categories as $category) {
-            var_dump($category);
-        }
+        $records = $this->getService()->categories($options);
+        var_dump($records);
 
 
         if ($verbose) {
@@ -118,7 +110,7 @@ class ConsoleController extends AbstractConsoleController
     }
 
     /**
-     * @return \USAToday\Service\BestSellersService
+     * @return \Firelike\USAToday\Service\BestSellersService
      */
     public function getService()
     {
@@ -126,7 +118,7 @@ class ConsoleController extends AbstractConsoleController
     }
 
     /**
-     * @param \USAToday\Service\BestSellersService $service
+     * @param \Firelike\USAToday\Service\BestSellersService $service
      */
     public function setService($service)
     {

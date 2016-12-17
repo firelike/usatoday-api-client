@@ -1,5 +1,5 @@
 <?php
-namespace USAToday;
+namespace Firelike\USAToday;
 
 use Zend\ModuleManager\Feature\ConsoleUsageProviderInterface;
 use Zend\Console\Adapter\AdapterInterface as Console;

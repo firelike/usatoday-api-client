@@ -1,8 +1,9 @@
 <?php
-namespace USAToday\Service;
+namespace Firelike\USAToday\Service;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\RequestException;
 
 class BestSellersService
 {
@@ -123,7 +124,7 @@ class BestSellersService
                 )
             );
 
-        } catch (\GuzzleHttp\Exception\RequestException $zhce) {
+        } catch (RequestException $zhce) {
             $message = 'Error in request to Web service: ' . $zhce->getMessage();
             throw new \Exception($message, $zhce->getCode());
 

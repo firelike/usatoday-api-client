@@ -1,7 +1,8 @@
 <?php
-namespace USAToday\Service\Factory;
+namespace Firelike\USAToday\Service\Factory;
 
 
+use Firelike\USAToday\Service\BestSellersService;
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 
@@ -11,7 +12,7 @@ class BestSellersServiceFactory implements FactoryInterface
 
     public function __invoke(ContainerInterface $sm, $requestedName, array $options = null)
     {
-        $service = new \USAToday\Service\BestSellersService();
+        $service = new BestSellersService();
 
         $config = $sm->get('Config');
         if (isset($config['usat_service'])) {

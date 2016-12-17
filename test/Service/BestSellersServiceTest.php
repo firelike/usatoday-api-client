@@ -1,5 +1,5 @@
 <?php
-namespace USATodayTest\Service;
+namespace Firelike\USATodayTest\Service;
 
 
 /**
@@ -10,40 +10,9 @@ class BestSellersServiceTest extends \PHPUnit_Framework_TestCase
 
     /**
      *
-     * @var \USAToday\Service\USAToday
+     * @var \Firelike\USAToday\Service\BestSellersService
      */
     private $service;
-
-
-    /**
-     * Prepares the environment before running a test.
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-        $this->service = new \USAToday\Service\BestSellersService();
-    }
-
-
-    /**
-     * Cleans up the environment after running a test.
-     */
-    protected function tearDown()
-    {
-        $this->service = null;
-
-        parent::tearDown();
-    }
-
-
-    /**
-     * Tests \USAToday\Service\USAToday->__construct()
-     */
-    public function test__construct()
-    {
-        $this->assertInstanceOf('\USAToday\Service\BestSellersService', $this->service);
-    }
-
 
     /**
      * Tests \USAToday\Service\USAToday->booklists()
