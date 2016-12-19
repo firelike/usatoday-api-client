@@ -39,7 +39,7 @@ class BestSellersService
 
         $httpResponse = $this->apiCall('/booklists', array_filter($query));
 
-        $arr = @json_decode($httpResponse->getBody());
+        $arr = @json_decode($httpResponse->getBody(), true);
 
         if (empty($arr->BookLists)) {
             return false;
@@ -71,7 +71,7 @@ class BestSellersService
 
         $httpResponse = $this->apiCall('/dates', array_filter($query));
 
-        $arr = @json_decode($httpResponse->getBody());
+        $arr = @json_decode($httpResponse->getBody(), true);
 
         $dates = array();
         if (isset($arr['bookListDates'])) {
@@ -99,7 +99,7 @@ class BestSellersService
         $query = array_merge($defaultOptions, $options);
 
         $httpResponse = $this->apiCall('/categories', array_filter($query));
-        $arr = @json_decode($httpResponse->getBody());
+        $arr = @json_decode($httpResponse->getBody(), true);
 
         $categories = array();
         if (isset($arr['categories'])) {
