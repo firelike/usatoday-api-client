@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Zend Framework module with API client to access USA Today BestSellers API
+Laminas/Zend Framework module with API client to access USA Today BestSellers API
 
 ## Installation
 Install the module using Composer into your application's vendor directory. Add the following line to your
